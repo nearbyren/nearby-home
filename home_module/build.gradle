@@ -9,7 +9,7 @@ afterEvaluate {
             release(MavenPublication) {
                 from components.release
                 groupId = 'ren.nearby.home_module'
-                artifactId = 'home'
+                artifactId = 'module'
                 version = '1.0.0'
             }
         }
