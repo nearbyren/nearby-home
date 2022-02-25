@@ -3,18 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
 }
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'ren.nearby.home_module'
-                artifactId = 'module'
-                version = '1.0.0'
-            }
-        }
-    }
-}
+
 android {
     compileSdk 32
 
@@ -54,4 +43,18 @@ dependencies {
     implementation 'com.github.nearbyren:nearby-common:1.0.1'
     //注意这里只依赖share_export（share_module由壳工程引入）
 
+}
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'ren.nearby.home_module'
+                artifactId = 'home'
+                version = '1.0.0'
+            }
+        }
+    }
 }

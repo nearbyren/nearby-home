@@ -3,18 +3,7 @@ plugins {
     id 'kotlin-android'
     id 'maven-publish'
 }
-afterEvaluate {
-    publishing {
-        publications {
-            release(MavenPublication) {
-                from components.release
-                groupId = 'ren.nearby.home_export'
-                artifactId = 'export'
-                version = '1.0.0'
-            }
-        }
-    }
-}
+
 android {
     compileSdk 32
 
@@ -52,4 +41,19 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation project(path: ':home_export')
+}
+
+
+
+afterEvaluate {
+    publishing {
+        publications {
+            release(MavenPublication) {
+                from components.release
+                groupId = 'ren.nearby.home_export'
+                artifactId = 'home'
+                version = '1.0.0'
+            }
+        }
+    }
 }
