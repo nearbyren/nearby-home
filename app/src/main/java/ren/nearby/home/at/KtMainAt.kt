@@ -12,6 +12,7 @@ import ren.nearby.home.R
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
+import ren.nearby.home.login.KtLoginAct
 import ren.nearby.home.vm.ModuleData
 import ren.nearby.home.vm.MyViewModule
 import ren.nearby.home_module.MainActivity
@@ -65,11 +66,21 @@ class KtMainAt : AppCompatActivity() {
         l2.setOnClickListener {
             startActivity(Intent(KtMainAt@ this, MainActivity::class.java))
         }
+        net.setOnClickListener {
+            start2()
+        }
 
     }
 
     fun start() {
         val intent = Intent(KtMainAt@ this, Kt2MainAt::class.java).apply {
+            putExtra("name", "测试 registerForActivityResult")
+        }
+        myActivityLauncher.launch(intent)
+    }
+
+    fun start2() {
+        val intent = Intent(KtMainAt@ this, KtLoginAct::class.java).apply {
             putExtra("name", "测试 registerForActivityResult")
         }
         myActivityLauncher.launch(intent)

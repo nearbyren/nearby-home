@@ -1,4 +1,4 @@
-package ren.nearby.home.at
+package ren.nearby.home.login
 
 import android.app.Activity
 import android.content.Intent
@@ -22,14 +22,16 @@ import ren.nearby.home_module.koin.LibBean
  * @created on: 2022/3/10 13:58
  * @description:
  */
-class Kt2MainAt : AppCompatActivity() {
+class KtLoginAct : AppCompatActivity() {
 
 
     //注入方式
 //    val firstPresenter: MySimplePresenter by inject()
     //注入方式
     val firstPresenter: MyViewModule by viewModel()
-
+//    lateinit var mViewModel: T
+//    val clazz = this.javaClass.kotlin.supertypes[0].arguments[0].type!!.classifier!! as KClass<T>
+//     mViewModel = getViewModel<T>(clazz) //koin 注入
     val login: LoginViewModel by viewModel()
 
     val libBean by inject<LibBean>()
@@ -48,7 +50,7 @@ class Kt2MainAt : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_login)
         intent?.let {
             val st = intent.getStringExtra("name")
             Log.d("HOME", "输出  - > ${st}")
@@ -66,7 +68,7 @@ class Kt2MainAt : AppCompatActivity() {
         }
         net.setOnClickListener {
             login?.let {
-                login.login("11", "11").observe(this, Observer { us ->
+                login.login("595954727", "595954727").observe(this, Observer { us ->
                         Logger.d("login ...........")
                 })
             }

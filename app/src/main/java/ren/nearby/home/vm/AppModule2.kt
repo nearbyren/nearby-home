@@ -1,8 +1,11 @@
 package ren.nearby.home.vm
 
-import org.koin.dsl.module
+ import org.koin.dsl.module
 import ren.nearby.home.koin.HelloRepository
 import ren.nearby.home.koin.HelloRepositoryImp
+import ren.nearby.home.login.LoginRepository
+import ren.nearby.home.login.LoginViewModel
+import ren.nearby.home.net.net.RetrofitClient
 
 /**
  * @author:
@@ -20,6 +23,21 @@ val appModule2 = module {
     single<HelloRepository> {
         HelloRepositoryImp()
     }
+    /*********************网络注入模块************/
+
+    //构建网络请求
+    single {
+        RetrofitClient.instance
+    }
+    //将网络请求注入
+    single {
+        LoginRepository(get())
+    }
+    //将网络请求注入业务层
+    factory {
+        LoginViewModel(get())
+    }
+    /*********************网络注入模块************/
 
     // Simple Presenter Factory
     factory {

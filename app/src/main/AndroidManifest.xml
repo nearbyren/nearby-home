@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ren.nearby.home">
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:name=".app.HomeApplication"
@@ -20,6 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".at.Kt2MainAt" />
+        <activity android:name=".login.KtLoginAct" />
     </application>
 
 </manifest>
