@@ -1,7 +1,10 @@
+import nearby.composing.builds.*
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'maven-publish'
+    id 'nearby.composing.builds'
+
 }
 
 android {
@@ -10,10 +13,11 @@ android {
     defaultConfig {
         minSdk 21
         targetSdk 32
+        versionCode 1
+        versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
-
     }
 
     buildTypes {
@@ -22,13 +26,13 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_11
-        targetCompatibility JavaVersion.VERSION_11
-    }
 
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
     kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_11.toString()
+        jvmTarget = '1.8'
     }
 }
 
@@ -40,32 +44,19 @@ dependencies {
     testImplementation 'junit:junit:4.+'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'com.github.nearbyren:nearby-common:1.0.1'
-
 
 }
+
+
 
 afterEvaluate {
     publishing {
         publications {
-
-            // Creates a Maven publication called "release".
             release(MavenPublication) {
-
-                // Applies the component for the release build variant.
                 from components.release
-
-                // Library Package Name (Example : "com.frogobox.androidfirstlib")
-                // NOTE : Different GroupId For Each Library / Module, So That Each Library Is Not Overwritten
                 groupId = 'ren.nearby.home_export'
-
-                // Library Name / Module Name (Example : "androidfirstlib")
-                // NOTE : Different ArtifactId For Each Library / Module, So That Each Library Is Not Overwritten
-                artifactId = 'home_export'
-
-                // Version Library Name (Example : "1.0.0")
+                artifactId = 'home'
                 version = '1.0.0'
-
             }
         }
     }

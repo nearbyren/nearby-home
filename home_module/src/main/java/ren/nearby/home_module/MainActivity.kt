@@ -1,9 +1,10 @@
 package ren.nearby.home_module
 
-import android.widget.Toast
-import com.orhanobut.logger.Logger
+import com.tencent.tinker.loader.shareutil.ShareReflectUtil
 import ren.nearby.common_module.BaseActivityKot
+import kotlinx.android.synthetic.main.home_activity_main.*
 import ren.nearby.share_export.ShareServiceUtil
+import ren.nearby.share_export.router.ShareRouterTable
 
 
 /**
@@ -14,17 +15,16 @@ import ren.nearby.share_export.ShareServiceUtil
 class MainActivity : BaseActivityKot() {
 
 
+    override fun getLayoutResKot(): Int {
+        return R.layout.home_activity_main
+    }
+
     override fun initView() {
         super.initView()
-
-        Logger.d("share share_export initView")
-        ShareServiceUtil.navigateShareWx()
-
-        Toast.makeText(
-            MainActivity@ this,
-            "分享 结果    =  ${ShareServiceUtil.shareWxResult()}",
-            Toast.LENGTH_LONG
-        ).show()
+        home_tv.text = "我是module"
+        home_share.setOnClickListener {
+            ShareServiceUtil.getService()
+        }
     }
 
 }
