@@ -1,5 +1,6 @@
 package ren.nearby.home.vm
 
+import org.koin.core.qualifier.named
 import org.koin.dsl.module
 import ren.nearby.home.koin.HelloRepository
 import ren.nearby.home.koin.HelloRepositoryImp
@@ -48,6 +49,32 @@ val appModule2 = module {
     //lib module
     factory {
         ModuleData(get())
+    }
+
+    single {
+        Girl("luxi")
+    }
+    factory {
+        Person(get())
+    }
+
+    //通过限定符标记构造方法--qualifier
+    //传递了两个参数
+    factory(named("double")) {
+        Person(get(), get() )
+    }
+    //传递了一个参数
+    factory(named("single")) { (girl: Girl) ->
+        Person(girl)
+    }
+
+    /**
+     * @see ren.nearby.home.at.KtRepository.onCreate
+     */
+    scope(named("my_scope")) {
+        scoped {
+            ScopeData()
+        }
     }
 }
 
