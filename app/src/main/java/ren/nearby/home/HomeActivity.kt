@@ -3,7 +3,10 @@ package ren.nearby.home
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import ren.nearby.home_module.MainActivity
+import kotlinx.android.synthetic.main.activity_home.*
+import ren.nearby.home.at.KtForActivity
+import ren.nearby.home.at.KtRepository
+import ren.nearby.home.login.KtLoginAct
 
 /**
  * @author: lr
@@ -13,7 +16,15 @@ import ren.nearby.home_module.MainActivity
 class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        startActivity(Intent(HomeActivity@ this, MainActivity::class.java))
-
+        setContentView(R.layout.activity_home)
+        start_repository.setOnClickListener {
+            startActivity(Intent(HomeActivity@ this, KtRepository::class.java))
+        }
+        start_for.setOnClickListener {
+            startActivity(Intent(HomeActivity@ this, KtForActivity::class.java))
+        }
+        start_login.setOnClickListener {
+            startActivity(Intent(HomeActivity@ this, KtLoginAct::class.java))
+        }
     }
 }

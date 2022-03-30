@@ -18,42 +18,24 @@
 
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/start_repository"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="button"
+        android:text="repository"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/l2"
+        android:id="@+id/start_for"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="l2"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="start_for"
+        app:layout_constraintTop_toBottomOf="@id/start_repository" />
 
     <Button
-        android:id="@+id/permission1"
+        android:id="@+id/start_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="permission1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
-    <Button
-        android:id="@+id/permission2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="permission2"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent" />
-    <Button
-        android:id="@+id/net"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="net"
-        app:layout_constraintTop_toBottomOf="@id/button"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
+        android:text="start_login"
+        app:layout_constraintTop_toBottomOf="@id/start_for" />
 </androidx.constraintlayout.widget.ConstraintLayout>

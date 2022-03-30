@@ -24,52 +24,20 @@ import ren.nearby.home_module.koin.LibBean
  */
 class KtLoginAct : AppCompatActivity() {
 
-
-    //注入方式
-//    val firstPresenter: MySimplePresenter by inject()
-    //注入方式
-    val firstPresenter: MyViewModule by viewModel()
-//    lateinit var mViewModel: T
+    //    lateinit var mViewModel: T
 //    val clazz = this.javaClass.kotlin.supertypes[0].arguments[0].type!!.classifier!! as KClass<T>
 //     mViewModel = getViewModel<T>(clazz) //koin 注入
     val login: LoginViewModel by viewModel()
 
-    val libBean by inject<LibBean>()
-
-    val moduleData by inject<ModuleData>()
-
-    /***
-     *     // 更多方式
-     *     // non lazy
-     *     val firstPresenter: MySimplePresenter = get()
-     *     // lazy inject
-     *     private val homePresenter by inject<HomePresenter>()
-     *     // non lazy
-     *     private val homePresenter = get<HomePresenter>()
-     */
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
-        intent?.let {
-            val st = intent.getStringExtra("name")
-            Log.d("HOME", "输出  - > ${st}")
-            tv.text = st
-        }
-        button.setOnClickListener {
-            Log.d("HOME", firstPresenter.sayHello())
-            Log.d("HOME", libBean.toString())
-            Log.d("HOME", moduleData.toString())
-            val intent = Intent().apply {
-                putExtra("result", "hello 我是返回的result")
-            }
-            setResult(Activity.RESULT_OK, intent)
-            finish()
-        }
         net.setOnClickListener {
             login?.let {
                 login.login("595954727", "595954727").observe(this, Observer { us ->
-                        Logger.d("login ...........")
+                    Logger.d("login ...........")
+                    tv.text = "${tv.text} , ${us.username}"
                 })
             }
         }

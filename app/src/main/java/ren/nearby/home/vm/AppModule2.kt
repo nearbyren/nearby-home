@@ -1,6 +1,6 @@
 package ren.nearby.home.vm
 
- import org.koin.dsl.module
+import org.koin.dsl.module
 import ren.nearby.home.koin.HelloRepository
 import ren.nearby.home.koin.HelloRepositoryImp
 import ren.nearby.home.login.LoginRepository
@@ -19,7 +19,8 @@ import ren.nearby.home.net.net.RetrofitClient
  * get()
  */
 val appModule2 = module {
-    //构建 HelloRepository 单例
+
+    //以单例模式声明将这个组件定义绑定到HelloRepository
     single<HelloRepository> {
         HelloRepositoryImp()
     }

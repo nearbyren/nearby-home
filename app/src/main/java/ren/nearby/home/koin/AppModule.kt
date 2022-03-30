@@ -12,6 +12,13 @@ import org.koin.dsl.module
  * single 单例模式
  * factory 每次创建新的实例
  * get()
+ *
+ * 方法名	    描述	                                        使用
+ * single	    生成单一对象	                                    by inject()
+ * factory	    每次都会生成新的对象	                            by inject()
+ * viewModel	用来创建ViewModel实例，默认生成的都是新对象	        by viewModel(),通过get<T>()来获取的ViewModel是不同的对象
+ * fragment	    用来创建fragment	                                by inject()
+
  */
 val appModule = module {
     //构建 HelloRepository 单例

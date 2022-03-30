@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ren.nearby.home">
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Nearby">
         <activity
-            android:name=".at.KtMainAt"
+            android:name=".HomeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,8 +21,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".at.Kt2MainAt" />
+
+
         <activity android:name=".login.KtLoginAct" />
+        <activity android:name=".at.KtRepository" />
+
+
+        <activity
+            android:name=".at.KtForActivity"
+            android:exported="true" />
+        <activity android:name=".at.KtForToActivity" />
+
     </application>
 
 </manifest>

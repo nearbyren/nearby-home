@@ -7,7 +7,7 @@
     tools:context=".at.KtForActivity">
 
     <TextView
-        android:id="@+id/tv"
+        android:id="@+id/tv_content"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Hello World!"
@@ -18,11 +18,18 @@
 
 
     <Button
-        android:id="@+id/net"
+        android:id="@+id/btn_inject_get"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="net"
+        android:text="inject_get"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_view_model"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="view_model"
+        app:layout_constraintTop_toBottomOf="@id/btn_inject_get" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
