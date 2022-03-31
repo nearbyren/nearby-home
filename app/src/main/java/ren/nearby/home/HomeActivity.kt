@@ -5,6 +5,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_home.*
 import ren.nearby.home.at.KtForActivity
+import ren.nearby.home.at.KtGlobalScopeActivity
 import ren.nearby.home.at.KtRepository
 import ren.nearby.home.login.KtLoginAct
 
@@ -25,6 +26,9 @@ class HomeActivity : AppCompatActivity() {
         }
         start_login.setOnClickListener {
             startActivity(Intent(HomeActivity@ this, KtLoginAct::class.java))
+        }
+        global_scope.setOnClickListener {
+            startActivity(Intent(HomeActivity@ this, KtGlobalScopeActivity::class.java))
         }
     }
 }

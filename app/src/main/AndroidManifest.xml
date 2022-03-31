@@ -31,6 +31,7 @@
             android:name=".at.KtForActivity"
             android:exported="true" />
         <activity android:name=".at.KtForToActivity" />
+        <activity android:name=".at.KtGlobalScopeActivity" />
 
     </application>
 
