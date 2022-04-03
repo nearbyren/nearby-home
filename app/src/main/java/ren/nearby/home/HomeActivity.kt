@@ -8,6 +8,7 @@ import ren.nearby.home.at.KtForActivity
 import ren.nearby.home.at.KtGlobalScopeActivity
 import ren.nearby.home.at.KtRepository
 import ren.nearby.home.login.KtLoginAct
+import ren.nearby.share_export.ShareServiceUtil
 
 /**
  * @author: lr
@@ -30,5 +31,6 @@ class HomeActivity : AppCompatActivity() {
         global_scope.setOnClickListener {
             startActivity(Intent(HomeActivity@ this, KtGlobalScopeActivity::class.java))
         }
+        ShareServiceUtil.getService()
     }
 }
