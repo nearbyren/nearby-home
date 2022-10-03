@@ -74,7 +74,7 @@ dependencies {
 //    implementation 'com.github.nearbyren.nearby-share:share_export:1.0.7'
     //注意这里只依赖share_export（share_module由壳工程引入）
     implementation project(path: ':home_export')
-    implementation('ren.nearby.share_export:share-export:1.0.0')
+    implementation('ren.nearby.share_export:share-export:1.0.2')
 
 
 }

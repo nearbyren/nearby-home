@@ -8,7 +8,7 @@
   "useModuleAll": false,
   "list": [
     {
-      "useModule": true,
+      "useModule": false,
       "module_name": "share_export",
       "module_dir": "../nearby-share/share_export",
       "module_group": "ren.nearby.share_export:share-export"

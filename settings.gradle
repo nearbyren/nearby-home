@@ -12,7 +12,7 @@ dependencyResolutionManagement {
                 url  = uri("https://maven.pkg.github.com/nearbyren/nearby-share")
                 credentials {
                     username = "nearbyren"
-                    password = "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"
+                    password = "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"
                 }
             }
             google()

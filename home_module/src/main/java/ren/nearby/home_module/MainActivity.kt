@@ -25,5 +25,7 @@ class MainActivity : BaseActivityKot() {
             ShareServiceUtil.shareWxResult()
         }
         TEstss.t5()
+        TEstss.t7()
+        TEstss.t8()
     }
 }
