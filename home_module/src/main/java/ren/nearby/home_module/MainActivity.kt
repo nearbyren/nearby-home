@@ -1,10 +1,9 @@
 package ren.nearby.home_module
 
-import com.tencent.tinker.loader.shareutil.ShareReflectUtil
-import ren.nearby.common_module.BaseActivityKot
 import kotlinx.android.synthetic.main.home_activity_main.*
+import ren.nearby.common_module.BaseActivityKot
 import ren.nearby.share_export.ShareServiceUtil
-import ren.nearby.share_export.router.ShareRouterTable
+import ren.nearby.share_export.TEstss
 
 
 /**
@@ -23,8 +22,8 @@ class MainActivity : BaseActivityKot() {
         super.initView()
         home_tv.text = "我是module"
         home_share.setOnClickListener {
-            ShareServiceUtil.getService()
+            ShareServiceUtil.shareWxResult()
         }
+        TEstss.t5()
     }
-
 }

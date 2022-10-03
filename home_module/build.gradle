@@ -1,4 +1,3 @@
-import nearby.composing.builds.*
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
@@ -6,6 +5,8 @@ plugins {
     id 'nearby.composing.builds'
     id 'kotlin-android-extensions'
 //    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'bga-appinit-plugin'
 
 }
 
@@ -70,9 +71,11 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     implementation 'com.github.nearbyren:nearby-common:1.0.2'
-    implementation 'com.github.nearbyren.nearby-share:share_export:1.0.7'
+//    implementation 'com.github.nearbyren.nearby-share:share_export:1.0.7'
     //注意这里只依赖share_export（share_module由壳工程引入）
     implementation project(path: ':home_export')
+    implementation('ren.nearby.share_export:share-export:1.0.0')
+
 
 }
 
